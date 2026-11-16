@@ -26,7 +26,7 @@
 
 Unlike the traditional web version, which relies on general internet corpora, this application dynamically builds its semantic universe directly from the Portuguese text of Antoine de Saint-Exupéry's ***O Pequeno Príncipe*** (*The Little Prince*). At the start of every match, the server randomly picks a secret word from the book's vocabulary, and the player must discover it through unlimited guesses ranked by **semantic proximity** (where position `1` represents the secret word).
 
-> **Language Notice:** Because this project was developed for a Brazilian university course and uses the Portuguese edition of *The Little Prince* along with Portuguese NLP models (`pt_core_news_md` and Stanza `pt`), **the entire game—including the user interface, valid vocabulary, hints, and source code comments is exclusively in Portuguese.**
+> **Language Notice:** Because this project was developed for a Brazilian university course and uses the Portuguese edition of *The Little Prince* along with Portuguese NLP models (`pt_core_news_md` and Stanza `pt`), **the entire game, including the user interface, valid vocabulary, hints, and source code comments is exclusively in Portuguese.**
 
 ### Features & Game Mechanics
 
