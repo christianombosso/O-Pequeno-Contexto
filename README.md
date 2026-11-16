@@ -10,7 +10,7 @@
 [![Architecture](https://img.shields.io/badge/Architecture-Client--Server%20(XML--RPC)-2939b3?style=flat-square)]()
 [![GUI](https://img.shields.io/badge/GUI-CustomTkinter-1f6aa5?style=flat-square)]()
 
-[🇺🇸 English Version](#-english) • [🇧🇷 Versão em Português](#-português)
+[🇺🇸 English Version](#english) • [🇧🇷 Versão em Português](#portugues)
 
 </div>
 
@@ -23,6 +23,8 @@
 
 ---
 
+<a id="english"></a>
+
 ## English
 
 ### About the Project
@@ -33,24 +35,24 @@ Unlike the traditional web version, which relies on general internet corpora, th
 
 ### Features & Game Mechanics
 
-* **Book-Driven Semantic Universe:** All valid guesses and secret words come exclusively from the vocabulary of *O Pequeno Príncipe*.
-* **Unlimited Guesses & No Timer:** Players can freely explore semantic relationships between words without time pressure.
-* **Color-Coded Proximity Feedback:**
+- **Book-Driven Semantic Universe:** All valid guesses and secret words come exclusively from the vocabulary of *O Pequeno Príncipe*.
+- **Unlimited Guesses & No Timer:** Players can freely explore semantic relationships between words without time pressure.
+- **Color-Coded Proximity Feedback:**
   * 🟩 **Green:** Very close to the secret word (top 2% of the ranking).
   * 🟨 **Yellow:** Moderately close (top 20% of the ranking).
   * 🟥 **Red:** Semantically distant from the target.
-* **Smart Hint System:** Provides an unguessed word closer to the secret target than the player's current best guess, scaling its jump size based on how close the player already is.
-* **Give Up & Summary:** Reveals the secret word along with the top 5 closest terms in the book's vocabulary and match statistics.
+- **Smart Hint System:** Provides an unguessed word closer to the secret target than the player's current best guess, scaling its jump size based on how close the player already is.
+- **Give Up & Summary:** Reveals the secret word along with the top 5 closest terms in the book's vocabulary and match statistics.
 
 ### Architecture & How It Works
 
 The system is built on a decoupled **Client-Server architecture** communicating via **XML-RPC** (`localhost:9876`):
 
-* **Server (`servidor.py`):** Concentrates all Natural Language Processing (NLP) and game state logic:
+- **Server (`servidor.py`):** Concentrates all Natural Language Processing (NLP) and game state logic:
   * **Text Extraction & Normalization:** Extracts pages 15–206 from `recursos/livro.pdf` using `pdfplumber` and removes accents/casing via `unidecode`.
   * **Lemmatization & Filtering:** Uses **Stanza** (`pt`) for morphological lemmatization (grouping verb conjugations and noun variations), applies custom lemmatization fixes, removes custom Portuguese stopwords, and builds a filtered vocabulary of **718 recurring terms** (minimum frequency of 2).
   * **Semantic Ranking:** Maps vocabulary tokens to pre-trained dense word embeddings using **spaCy** (`pt_core_news_md`) and computes **Cosine Similarity** from scratch to rank the entire vocabulary relative to the secret word.
-* **Client (`cliente.py` & `estilo.py`):** Handles only UI rendering and user interaction via **CustomTkinter** and **Pillow**, including custom typography, confirmation dialogs, and request locking to prevent concurrent RPC collisions.
+- **Client (`cliente.py` & `estilo.py`):** Handles only UI rendering and user interaction via **CustomTkinter** and **Pillow**, including custom typography, confirmation dialogs, and request locking to prevent concurrent RPC collisions.
 
 ### Project Structure
 
@@ -98,6 +100,8 @@ The system is built on a decoupled **Client-Server architecture** communicating 
    
 ---
 
+<a id="portugues"></a>
+
 ## Português
 
 ### Sobre o Projeto
@@ -108,24 +112,24 @@ Diferente da versão web tradicional, que utiliza bases genéricas da internet, 
 
 ### Funcionalidades e Mecânicas
 
-* **Universo Semântico Baseado no Livro:** Todos os palpites válidos e palavras secretas pertencem exclusivamente ao vocabulário de *O Pequeno Príncipe*.
-* **Tentativas Ilimitadas e Sem Cronômetro:** Permite explorar livremente as relações semânticas entre as palavras sem limite de tempo.
-* **Feedback Visual por Cores:**
+- **Universo Semântico Baseado no Livro:** Todos os palpites válidos e palavras secretas pertencem exclusivamente ao vocabulário de *O Pequeno Príncipe*.
+- **Tentativas Ilimitadas e Sem Cronômetro:** Permite explorar livremente as relações semânticas entre as palavras sem limite de tempo.
+- **Feedback Visual por Cores:**
   * 🟩 **Verde:** Muito próximo da palavra secreta (top 2% do ranking).
   * 🟨 **Amarelo:** Razoavelmente próximo (top 20% do ranking).
   * 🟥 **Vermelho:** Distante semanticamente da resposta.
-* **Sistema de Dicas Inteligente:** Fornece uma palavra ainda não tentada que esteja mais próxima da resposta do que o melhor palpite atual do jogador, ajustando o avanço conforme a proximidade já alcançada.
-* **Desistência e Resumo:** Revela a palavra secreta junto com as 5 palavras mais próximas no vocabulário do livro e as estatísticas da partida.
+- **Sistema de Dicas Inteligente:** Fornece uma palavra ainda não tentada que esteja mais próxima da resposta do que o melhor palpite atual do jogador, ajustando o avanço conforme a proximidade já alcançada.
+- **Desistência e Resumo:** Revela a palavra secreta junto com as 5 palavras mais próximas no vocabulário do livro e as estatísticas da partida.
 
 ### Arquitetura e Funcionamento
 
 O sistema utiliza uma arquitetura **Cliente-Servidor** desacoplada com comunicação via **XML-RPC** (`localhost:9876`):
 
-* **Servidor (`servidor.py`):** Concentra todo o pipeline de Processamento de Linguagem Natural (PLN) e a lógica de estado da partida:
+- **Servidor (`servidor.py`):** Concentra todo o pipeline de Processamento de Linguagem Natural (PLN) e a lógica de estado da partida:
   * **Extração e Normalização:** Extrai o conteúdo das páginas 15 a 206 de `recursos/livro.pdf` com `pdfplumber` e normaliza acentuação e caixa com `unidecode`.
   * **Lematização e Filtragem:** Utiliza o **Stanza** (`pt`) para lematização morfológica (agrupando conjugações verbais e variações nominais), aplica correções manuais de lemas, remove *stopwords* customizadas e monta um vocabulário filtrado de **718 palavras relevantes** (frequência mínima de 2 ocorrências).
   * **Ranking Semântico:** Mapeia os termos para vetores densos (*word embeddings*) utilizando o **spaCy** (`pt_core_news_md`) e calcula a **Similaridade por Cosseno** para ranquear todo o vocabulário em relação à palavra secreta.
-* **Cliente (`cliente.py` & `estilo.py`):** Responsável exclusivamente pela interface gráfica e interação com o usuário via **CustomTkinter** e **Pillow**, contando com tipografia personalizada, janelas de confirmação e trava de requisições para evitar chamadas simultâneas ao servidor.
+- **Cliente (`cliente.py` & `estilo.py`):** Responsável exclusivamente pela interface gráfica e interação com o usuário via **CustomTkinter** e **Pillow**, contando com tipografia personalizada, janelas de confirmação e trava de requisições para evitar chamadas simultâneas ao servidor.
 
 ### Estrutura do Projeto
 
