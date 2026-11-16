@@ -10,16 +10,9 @@
 [![Architecture](https://img.shields.io/badge/Architecture-Client--Server%20(XML--RPC)-2939b3?style=flat-square)]()
 [![GUI](https://img.shields.io/badge/GUI-CustomTkinter-1f6aa5?style=flat-square)]()
 
-[🇺🇸 English Version](#english) • [🇧🇷 Versão em Português](#portugues)
+[🇺🇸 English Version](#english) • [🇧🇷 Versão em Português](#portugues) • [🖼️ Images / Imagens](#imagens)
 
 </div>
-
-<!-- Descomente o bloco abaixo após adicionar suas capturas de tela na pasta screenshots/
-<div align="center">
-  <img src="screenshots/menu.png" alt="Menu Principal" width="48%"/>
-  <img src="screenshots/jogo.png" alt="Tela do Jogo" width="48%"/>
-</div>
--->
 
 ---
 
@@ -32,6 +25,8 @@
 **O Pequeno Contexto** is a desktop semantic word-guessing game inspired by [Contexto](https://contexto.me/), developed as an integrative academic project for the **Artificial Intelligence** and **Computer Networks & Distributed Systems** courses in the B.Sc. in Computer Science program at **Universidade Estadual do Paraná (UNESPAR)**.
 
 Unlike the traditional web version, which relies on general internet corpora, this application dynamically builds its semantic universe directly from the Portuguese text of Antoine de Saint-Exupéry's ***O Pequeno Príncipe*** (*The Little Prince*). At the start of every match, the server randomly picks a secret word from the book's vocabulary, and the player must discover it through unlimited guesses ranked by **semantic proximity** (where position `1` represents the secret word).
+
+> **Language Notice:** Because this project was developed for a Brazilian university course and uses the Portuguese edition of *The Little Prince* along with Portuguese NLP models (`pt_core_news_md` and Stanza `pt`), **the entire game—including the user interface, valid vocabulary, hints, and source code comments is exclusively in Portuguese.**
 
 ### Features & Game Mechanics
 
@@ -62,6 +57,7 @@ The system is built on a decoupled **Client-Server architecture** communicating 
 ├── estilo.py               # UI color palette, typography, and widget styles
 ├── vocabulario_gerado.txt  # Extracted 718-word vocabulary with occurrence counts
 ├── README.md               # Project documentation
+├── imagens/                # Interface screenshots
 └── recursos/
     ├── livro.pdf           # Source text (O Pequeno Príncipe)
     ├── fundo.png           # Custom background artwork
@@ -72,8 +68,8 @@ The system is built on a decoupled **Client-Server architecture** communicating 
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/christianombosso/o-pequeno-contexto.git](https://github.com/christianombosso/o-pequeno-contexto.git)
-   cd o-pequeno-contexto
+   git clone [https://github.com/christianombosso/O-Pequeno-Contexto.git](https://github.com/christianombosso/O-Pequeno-Contexto.git)
+   cd O-Pequeno-Contexto
    ```
 
 2. **Install the required dependencies:**
@@ -97,7 +93,7 @@ The system is built on a decoupled **Client-Server architecture** communicating 
    ```bash
    python cliente.py
    ```
-   
+
 ---
 
 <a id="portugues"></a>
@@ -139,6 +135,7 @@ O sistema utiliza uma arquitetura **Cliente-Servidor** desacoplada com comunica�
 ├── estilo.py               # Paleta de cores, fontes e estilos dos componentes
 ├── vocabulario_gerado.txt  # Vocabulário extraído (718 palavras) com frequência
 ├── README.md               # Documentação do projeto
+├── imagens/                # Capturas de tela da interface
 └── recursos/
     ├── livro.pdf           # Texto-base (O Pequeno Príncipe)
     ├── fundo.png           # Imagem de fundo das telas
@@ -149,8 +146,8 @@ O sistema utiliza uma arquitetura **Cliente-Servidor** desacoplada com comunica�
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/christianombosso/o-pequeno-contexto.git](https://github.com/christianombosso/o-pequeno-contexto.git)
-   cd o-pequeno-contexto
+   git clone [https://github.com/christianombosso/O-Pequeno-Contexto.git](https://github.com/christianombosso/O-Pequeno-Contexto.git)
+   cd O-Pequeno-Contexto
    ```
 
 2. **Instale as dependências:**
@@ -174,3 +171,25 @@ O sistema utiliza uma arquitetura **Cliente-Servidor** desacoplada com comunica�
    ```bash
    python cliente.py
    ```
+
+---
+
+<a id="imagens"></a>
+
+## 🖼️ Images / Imagens
+
+<div align="center">
+
+| Main Menu / Menu Principal | Gameplay / Tela do Jogo |
+| :---: | :---: |
+| <img src="imagens/menu.png" alt="Main Menu / Menu Principal" width="420"/> | <img src="imagens/jogo.png" alt="Gameplay / Tela do Jogo" width="420"/> |
+
+| How to Play / Como Jogar | About / Sobre |
+| :---: | :---: |
+| <img src="imagens/ajuda.png" alt="How to Play / Como Jogar" width="420"/> | <img src="imagens/sobre.png" alt="About / Sobre" width="420"/> |
+
+| Victory Screen / Tela de Vitória | Give Up Screen / Tela de Desistência |
+| :---: | :---: |
+| <img src="imagens/vitoria.png" alt="Victory Screen / Tela de Vitória" width="420"/> | <img src="imagens/desistencia.png" alt="Give Up Screen / Tela de Desistência" width="420"/> |
+
+</div>
