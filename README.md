@@ -59,7 +59,7 @@ The system is built on a decoupled **Client-Server architecture** communicating 
 ├── servidor.py             # NLP Pipeline, Semantic Engine & XML-RPC Server
 ├── estilo.py               # UI color palette, typography, and widget styles
 ├── vocabulario_gerado.txt  # Extracted 718-word vocabulary with occurrence counts
-├── README.txt              # Project documentation (in portuguese)
+├── README.md               # Project documentation
 └── recursos/
     ├── livro.pdf           # Source text (O Pequeno Príncipe)
     ├── fundo.png           # Custom background artwork
@@ -134,7 +134,7 @@ O sistema utiliza uma arquitetura **Cliente-Servidor** desacoplada com comunica�
 ├── servidor.py             # Pipeline de PLN, cálculo semântico e Servidor XML-RPC
 ├── estilo.py               # Paleta de cores, fontes e estilos dos componentes
 ├── vocabulario_gerado.txt  # Vocabulário extraído (718 palavras) com frequência
-├── README.txt              # Documentação do projeto
+├── README.md               # Documentação do projeto
 └── recursos/
     ├── livro.pdf           # Texto-base (O Pequeno Príncipe)
     ├── fundo.png           # Imagem de fundo das telas
