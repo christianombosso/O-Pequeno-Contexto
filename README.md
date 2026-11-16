@@ -23,7 +23,7 @@
 
 ---
 
-## 🇺🇸 English
+## English
 
 ### About the Project
 
@@ -98,7 +98,7 @@ The system is built on a decoupled **Client-Server architecture** communicating 
    
 ---
 
-## 🇧🇷 Português
+## Português
 
 ### Sobre o Projeto
 
